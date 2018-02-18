@@ -20,15 +20,11 @@ shinyUI(fluidPage(
     sidebarPanel(
             sliderInput("n", "Number of rolls", 1, 10000, 1),
             sliderInput("s", "Number of sides of the die", 4, 100, 4),
-      #numericInput("n", "Number of rolls:", 1, min = 1, max = 100),
-      #numericInput("s", "Number of sides of the die:", 6, min = 3, max = 20),
-      #verbatimTextOutput("value"),
       submitButton("Start")
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-       #textOutput("rolls"),
        plotOutput("histogram")
     )
   )
