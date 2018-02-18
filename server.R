@@ -16,8 +16,8 @@ shinyServer(function(input, output) {
   plot1<-renderPlot({
     
     n<-input$n
-    s<-input$s
-    numbers<-sample(1:s, n , replace=T)
+    f<-input$f
+    numbers<-sample(1:f, n , replace=T)
     hist(numbers)
     
     })
