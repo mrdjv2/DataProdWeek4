@@ -19,7 +19,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
             sliderInput("n", "Number of rolls", 1, 10000, 1),
-            sliderInput("s", "Number of sides of the die", 4, 100, 4),
+            sliderInput("s", "Number of faces of the die", 4, 100, 4),
       submitButton("Start")
     ),
     
