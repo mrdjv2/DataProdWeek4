@@ -11,18 +11,25 @@ library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
+        
+        #n<-as.numeric(renderText(input$slider1))
+        #s<-renderText(input$slider2)
+        
+        #rolls<-sample(1:6, 6, replace = TRUE)
    
-  throws<-reactive({
+  plot1<-renderPlot({
     
     n<-input$n
-    sample(1:6, n , replace=T)
+    s<-input$s
+    numbers<-sample(1:s, n , replace=T)
+    hist(numbers)
     
     })
   
-  plot<-renderPlot({hist(throws)})
+  #plot<-renderPlot({hist(rolls)})
   
   
-  output$histogram<-plot
-  #output$throws<-throws
+  output$histogram<-plot1
+  #output$rolls<-n
   
 })

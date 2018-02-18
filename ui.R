@@ -13,19 +13,22 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Simulation of n dice throws"),
+  titlePanel("Simulation of n dice rolls"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      numericInput("n", "Number of throws:", 1, min = 1, max = 100),
+            sliderInput("n", "Number of rolls", 1, 10000, 1),
+            sliderInput("s", "Number of sides of the die", 4, 100, 4),
+      #numericInput("n", "Number of rolls:", 1, min = 1, max = 100),
+      #numericInput("s", "Number of sides of the die:", 6, min = 3, max = 20),
       #verbatimTextOutput("value"),
       submitButton("Start")
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-       #textOutput("throws")
+       #textOutput("rolls"),
        plotOutput("histogram")
     )
   )
