@@ -1,0 +1,74 @@
+---
+title       : Simulation of die rolls
+subtitle    : 
+author      : Daniel Jungen
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+When rolling an ordinary die the result is one of the numbers 1 to 6. This can be simulated in R using the following code:
+
+
+```r
+sample(1:6, 1, replace = TRUE)
+```
+
+```
+## [1] 5
+```
+
+From a mathematical point of view this can be modelled as an Laplace-experiment. That means that the probability of getting a certain given number out of that roll is 1/6.
+
+The more often we roll the die the more uniformly will be the outcome, i.e. if you roll a die several thousand times, it is very likely to have more or less the same number of outcomes for ever number from 1 to 6.
+
+---
+
+
+## More than just 6 sides
+
+The RPG-players know that there are not just dice with 6 faces but also dice with 20 or more faces
+
+In that case the statements from the previous slide hold but of course with 1/s and 1 to s respectively where s denotes the number of faces of a die.
+
+So a simulation of several die rolls of a die with s faces can be simulated in R by the following code:
+
+
+
+```r
+n=20 #number of rolls
+f=10 #number of faces of the die
+
+sample(1:f, n, replace = TRUE)
+```
+
+```
+##  [1] 10  7  8  4  7  1  1  8  4  6  8  2  4  9  1  2  3  7  4  7
+```
+
+
+---
+
+## A shiny app
+
+Under https://danielac.shinyapps.io/DataProdWeek4/ there is a nice little shiny app which allows the user to set a number of die rolls as well as a number of faces of a die and the result is a histogram of the distribution of the outcome
+
+It allows the user to play around with the distributions and see that the distribution of the outcome gets more and more uniform as n grows larger.
+
+---
+
+## Where to find what
+
+The app can be found under the link on the previous page.
+
+The code for the program can be found in the github repo https://github.com/mrdjv2/DataProdWeek4.
+
+
+
+
