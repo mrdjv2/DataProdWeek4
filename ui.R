@@ -13,7 +13,7 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Simulation of n dice rolls"),
+  titlePanel("Simulation of throwing a die with s sides n times"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
